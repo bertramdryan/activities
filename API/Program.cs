@@ -1,5 +1,6 @@
 global using MediatR;
 using Application.Activities;
+using Application.Core;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
@@ -11,7 +12,8 @@ builder.Services.AddCors(opt => {
     });
 });
 
-builder.Services.AddMediatR(typeof(List));
+builder.Services.AddMediatR(typeof(List.Handler));
+builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
 
 // Add services to the container.
 
