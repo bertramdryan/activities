@@ -31,7 +31,7 @@ namespace API.Extensions
             services.AddSwaggerGen();
             services.AddDbContext<DataContext>(opts =>
             {
-                opts.UseNpgsql(config.GetConnectionString("DefaultConnection"));
+                opts.UseSqlite(config.GetConnectionString("DefaultConnection"));
             });
 
 
